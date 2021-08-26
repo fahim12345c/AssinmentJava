@@ -11,7 +11,7 @@ public class MovieGuess {
 
        String title=movieList.Game();
        char[] ch=new char[title.length()];
-       System.out.println(title);
+       //System.out.println(title);
         for(int i=0;i<title.length();i++)
         {
             if(title.charAt(i)==' ')
