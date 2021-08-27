@@ -11,12 +11,13 @@ public class MovieGuess {
 
        String title=movieList.Game();
        char[] ch=new char[title.length()];
-       //System.out.println(title);
+       int d=0;
         for(int i=0;i<title.length();i++)
         {
             if(title.charAt(i)==' ')
             {
                 ch[i]=title.charAt(i);
+                d++;
             }
             else
             {
@@ -27,6 +28,7 @@ public class MovieGuess {
 
         Scanner scan=new Scanner(System.in);
        int point =10;int w=0,x=0;
+       int e=title.length()-d;
        char[] wh=new char[100];
        boolean lose=true;
        while (point>0)
@@ -43,14 +45,9 @@ public class MovieGuess {
            {
 
                if(title.charAt(i)==c && ch[i]=='_') {
-                   point++;
                    x++;
                    ch[i] = c;
                    bool = true;
-               }
-               if(title.charAt(i)==' ')
-               {
-                   x++;
                }
            }
            if(bool==false)
@@ -58,8 +55,12 @@ public class MovieGuess {
                w++;
                wh[w]=c;
            }
+           if(bool==true)
+           {
+               point++;
+           }
 
-           if (x>=title.length())
+           if (x>=e)
            {
                lose=false;
                System.out.println("Win The Game");
