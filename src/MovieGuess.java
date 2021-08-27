@@ -55,11 +55,6 @@ public class MovieGuess {
                w++;
                wh[w]=c;
            }
-           if(bool==true)
-           {
-               point++;
-           }
-
            if (x>=e)
            {
                lose=false;
